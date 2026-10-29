@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@/src/lib/polyfills";
+import { AuthHeader } from "@/components/auth/auth-header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,10 +40,11 @@ export default function RootLayout({
             </div>
 
             <div className="flex items-center space-x-3">
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800">
+              <span className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-950 text-emerald-300 border border-emerald-800">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
-                Sessão Efêmera Ativa
+                Sessão Efêmera
               </span>
+              <AuthHeader />
             </div>
           </div>
         </header>
